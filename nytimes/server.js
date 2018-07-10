@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/apiRoutes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,9 +14,10 @@ if(process.env.Node_env === "production") {
 }
 
 app.use(routes);
+app.get("/articles");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nytreact");
 
 app.listen(PORT, function() {
-    console.log `API Server now listening on Port ${PORT}!`};
+    console.log (`API Server now listening on Port ${PORT}!`);
 });
