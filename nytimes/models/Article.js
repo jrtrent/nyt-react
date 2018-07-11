@@ -4,26 +4,23 @@ const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
  
-  Topic: {
+  title: {
     type: String,
     required: true
   },
 
-  startdate: {
+  date: {
       type: Date,
       required: false
   },
 
-  enddate: {
-      type: Date,
-      required: false
-    
-  },
 
-  link: {
+  url: {
     type: String,
     required: true
-  },
+  }
+
+  
   });
   
   
